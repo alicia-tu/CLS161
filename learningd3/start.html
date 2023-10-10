@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Selectors</title>
+    <style>
+        div
+        {
+            border:2px solid blue;
+            margin: 20px;
+            padding:10px;
+        }
+        p
+        {
+            color:blueviolet;
+        }
+        #parent3
+        {
+            color: blue;
+            background: grey;
+        }
+        .parent
+        {
+            background: gray;
+        }
+        [class]
+        {
+            background: gray;
+        }
+        div[id=parent1]
+        {
+            background: gray;
+        }      
+        div:not(#parent1)
+        {
+            background: green;
+        }
+        
+        div[id^=par]
+        {
+            background: green;
+        } 
+        div[id*=ent]
+        {
+            background: purple;
+        } */
+        div[id$="2"]
+        {
+            background: green;
+        } 
+    </style>
+</head>
+<body>
+    <div id="parent1" class="parent">
+        <p>First Paragraph</p>
+        <p>First Span</p>
+        <p>Second Paragraph</p>
+        <p>Third Paragraph</p>
+        <p>Fourth Paragraph</p>
+        <p>Second Span</p>
+    </div>
+    <div id="parent2" class="parent">
+        <p>First Span</p>
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+        <p>Second Span</p>
+        <p>Third Paragraph</p>
+    </div>
+    <div id="parent3">         
+        <ol>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+        </ol>
+    </div>
+</body>
+</html>
