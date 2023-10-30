@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head> New Class</head>
+<script src="http://d3js.org/d3.v5.min.js"></script>
+<style>
+    .changeColor
+    {
+        stroke: yellow;
+        fill: aqua;
+    }
+    circle{
+        stroke: blue;
+        fill: gray;
+    }
+    rect{
+        stroke: red;
+        fill:deeppink;
+    }
+    .changeBox
+    {
+        width:100px;
+        height:100px;
+        border: 1px solid red;
+        background: blueviolet;
+        float: left;
+        margin: 10px;
+    }
+</style>
+<head>
+    <button onclick="addClass();">Change</button> <br /> <br />
+    <button onclick="changeBack();">Back</button> <br /> <br />
+    <svg width="600" height="600">
+        <circle cx="50" cy="50" r="40"></circle>
+        <circle cx="140" cy="50" r="40"></circle>
+        <circle cx="230" cy="50" r="40"></circle>
+        <circle cx="320" cy="50" r="40"></circle>
+    </svg>
+    <button onclick="addBoxes();">Add</button>
+    <div id="parent">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        function addClass()
+        {
+            d3.selectAll("circle:nth-child(even)").classed("changeColor", true);
+        }
+        function changeBack()
+        {
+            d3.selectAll("circle").classed("changeColor", function(d, i){
+                if (i%2==0)
+                    return true
+                else
+                    return false
+            });
+        }
+        function addBoxes()
+        {
+            d3.select("#parent").selectAll("div").classed("changeBox", true);
+        }
+    </script>
+</head>
+</html>
